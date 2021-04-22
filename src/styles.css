@@ -15,22 +15,26 @@
   background-size: cover;
 }
 .city-time {
-  padding-right: 0;
+  padding: 0;
 }
-
+.current-time {
+  font-size: 14px;
+}
 .city {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
   text-transform: capitalize;
+  padding-top: 8px;
 }
 .search-form {
-  padding-left: 0;
+  padding: 0;
 }
 .findCity {
   color: black;
+  font-size: 14px;
   border: 0.5px solid white;
   border-radius: 15px;
-  padding: 5px 10px;
+  padding: 6px 10px 5px;
 }
 
 .search-button {
