@@ -102,3 +102,12 @@
 .predicted-weather {
   padding: 0;
 }
+.coder {
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 10px;
+}
+.coder a {
+  color: black;
+}
