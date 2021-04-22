@@ -9,7 +9,7 @@
   border-radius: 55px;
   padding: 70px;
   height: 862px;
-  width: 642px;
+  width: 600px;
   background: url("https://i.pinimg.com/originals/f6/0f/62/f60f6298dad2a3d09d721dc78049629e.gif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,6 +17,7 @@
 .city-time {
   padding-right: 0;
 }
+
 .city {
   font-size: 30px;
   font-weight: 400;
