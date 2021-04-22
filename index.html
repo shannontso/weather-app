@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="city"></h2>
+          <h4 class="current-time"></h4>
+        </div>
+        <div class="col">
+          <form class="search">
+            <input type="text" placeholder="Search city" class="findCity" />
+            <button type="submit" class="search-button">
+              <i class="bx bx-search"></i>
+            </button>
+          </form>
+          <button class="current-location">
+            <i class="bx bxs-map"></i> Current location
+          </button>
+        </div>
+      </div>
+      <div class="current-weather">
+        <i class="bx bx-cloud current-temp-icon"></i>
+        <h1 class="current-temperature">
+          <span class="degrees"></span
+          ><sup class="units"
+            ><a href="#" class="celsius">°C </a>|<a href="#" class="fah"
+              >°F</a
+            ></sup
+          >
+          <h4 class="weather-description"></h4>
+        </h1>
+      </div>
+      <div class="week-weather">
+        <div class="row days">
+          <div class="col predicted-weather">Thu</div>
+
+          <div class="col predicted-weather">Fri</div>
+
+          <div class="col predicted-weather">Sat</div>
+
+          <div class="col predicted-weather">Sun</div>
+
+          <div class="col predicted-weather">Mon</div>
+
+          <div class="col predicted-weather">Tue</div>
+        </div>
+        <div class="row week-icons">
+          <div class="col predicted-weather"><i class="bx bx-cloud"></i></div>
+
+          <div class="col predicted-weather"><i class="bx bx-cloud"></i></div>
+
+          <div class="col predicted-weather"><i class="bx bx-cloud"></i></div>
+
+          <div class="col predicted-weather"><i class="bx bx-cloud"></i></div>
+
+          <div class="col predicted-weather"><i class="bx bx-cloud"></i></div>
+
+          <div class="col predicted-weather"><i class="bx bx-cloud"></i></div>
+        </div>
+        <div class="row week-temp">
+          <div class="col predicted-weather">12°</div>
+
+          <div class="col predicted-weather">15°</div>
+
+          <div class="col predicted-weather">14°</div>
+
+          <div class="col predicted-weather">15°</div>
+
+          <div class="col predicted-weather">13°</div>
+
+          <div class="col predicted-weather">14°</div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
