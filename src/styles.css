@@ -67,8 +67,8 @@
   font-weight: 400;
   margin: 10px 0;
 }
-.current-temp-icon {
-  font-size: 200px;
+#icon {
+  font-size: 800px;
 }
 .current-temperature {
   font-size: 55px;
