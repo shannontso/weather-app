@@ -27,36 +27,20 @@ function formatDate(now) {
 let presentTime = document.querySelector(".current-time");
 presentTime.innerHTML = formatDate(now);
 
-// -----temperature----- //
-
-function degreesInCelsius() {
-  let temperature = document.querySelector(".degrees");
-  temperature.innerHTML = 13;
-}
-let celsius = document.querySelector(".celsius");
-celsius.addEventListener("click", degreesInCelsius);
-
-function degreesInFah() {
-  let temperatureElement = document.querySelector(".degrees");
-  temperatureElement.innerHTML = 55;
-}
-let fah = document.querySelector(".fah");
-fah.addEventListener("click", degreesInFah);
-
 // -----weather data----- //
 
 function showTemp(response) {
   console.log(response.data);
   document.querySelector(".city").innerHTML = response.data.name;
-  document.querySelector(".degrees").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector(".temperature").innerHTML = Math.round(celsiusTemp);
   document.querySelector(".weather-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
   document.querySelector(".wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  celsiusTemp = response.data.main.temp;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -82,8 +66,6 @@ function searchCity(event) {
 let form = document.querySelector(".search");
 form.addEventListener("submit", searchCity);
 
-search("Tokyo");
-
 // -----get current location----- //
 
 function showPosition(position) {
@@ -104,4 +86,27 @@ function showCurrentPosition(event) {
 let button = document.querySelector(".current-location");
 button.addEventListener("click", showCurrentPosition);
 
-// -------icon------- //
+// -------unit conversion------- //
+
+let celsiusTemp = null;
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temp = document.querySelector(".temperature");
+  temp.innerHTML = Math.round(celsiusTemp);
+}
+
+function showFahrenheitConversion(event) {
+  event.preventDefault();
+  let temp = document.querySelector(".temperature");
+  let fahTemp = (celsiusTemp * 9) / 5 + 32;
+  temp.innerHTML = Math.round(fahTemp);
+}
+
+let celsiusUnit = document.querySelector(".celsius");
+celsiusUnit.addEventListener("click", showCelsiusTemp);
+
+let fahrenheitUnit = document.querySelector(".fah");
+fahrenheitUnit.addEventListener("click", showFahrenheitConversion);
+
+search("Tokyo");
