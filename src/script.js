@@ -46,12 +46,17 @@ fah.addEventListener("click", degreesInFah);
 // -----weather data----- //
 
 function showTemp(response) {
+  console.log(response.data);
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector(".degrees").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector(".weather-description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector(".humidity").innerHTML = response.data.main.humidity;
+  document.querySelector(".wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
