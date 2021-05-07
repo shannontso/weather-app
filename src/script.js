@@ -31,6 +31,7 @@ presentTime.innerHTML = formatDate(now);
 
 function showTemp(response) {
   console.log(response.data);
+  celsiusTemp = response.data.main.temp;
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector(".temperature").innerHTML = Math.round(celsiusTemp);
   document.querySelector(".weather-description").innerHTML =
@@ -39,8 +40,6 @@ function showTemp(response) {
   document.querySelector(".wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-
-  celsiusTemp = response.data.main.temp;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
