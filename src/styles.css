@@ -26,6 +26,9 @@
   text-transform: capitalize;
   padding-top: 8px;
 }
+.time {
+  font-size: 13px;
+}
 .search-form {
   padding: 0;
 }

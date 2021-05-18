@@ -1,6 +1,14 @@
-let now = new Date();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-function formatDate(now) {
   let days = [
     "Sunday",
     "Monday",
@@ -10,22 +18,9 @@ function formatDate(now) {
     "Friday",
     "Saturday",
   ];
-  let currentDay = days[now.getDay()];
-  let currentHour = now.getHours();
-  let currentMinutes = now.getMinutes();
-
-  if (currentHour < 10) {
-    currentHour = `0${currentHour}`;
-  }
-  if (currentMinutes < 10) {
-    currentMinutes = `0${currentMinutes}`;
-  }
-
-  let formattedDate = `${currentDay} ${currentHour}:${currentMinutes}`;
-  return formattedDate;
+  let day = days[date.getDay()];
+  return `${day}, ${hours}:${minutes}`;
 }
-let presentTime = document.querySelector(".current-time");
-presentTime.innerHTML = formatDate(now);
 
 // -----forecast data----- //
 
@@ -92,6 +87,9 @@ function showTemp(response) {
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
   document.querySelector(".wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector(".date").innerHTML = formatDate(
+    response.data.dt * 1000
   );
 
   let iconElement = document.querySelector("#icon");
