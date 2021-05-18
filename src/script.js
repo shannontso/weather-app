@@ -27,6 +27,35 @@ function formatDate(now) {
 let presentTime = document.querySelector(".current-time");
 presentTime.innerHTML = formatDate(now);
 
+// -----forecast data----- //
+
+function showForecast() {
+  let forecastElement = document.querySelector(".weather-forecast");
+  let days = ["Thu", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+  <div class="forecast-day">${day}</div>
+  <img
+  src="http://openweathermap.org/img/wn/50d@2x.png"
+  alt=""
+  width="40"
+  />
+  <div class="forecast-temperature">
+  <span class="forecast-temp-max">18° </span>
+  <span class="forecast-temp-min">12°</span>
+  </div>
+  </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // -----weather data----- //
 
 function showTemp(response) {
@@ -109,3 +138,4 @@ let fahrenheitUnit = document.querySelector(".fah");
 fahrenheitUnit.addEventListener("click", showFahrenheitConversion);
 
 search("Tokyo");
+showForecast();
